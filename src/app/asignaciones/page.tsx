@@ -35,7 +35,7 @@ export default function AsignacionesPage() {
 
   useEffect(() => {
     fetchAsignaciones()
-  }, [selectedDate])
+  }, [selectedDate]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const fetchAsignaciones = async () => {
     try {

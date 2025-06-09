@@ -87,7 +87,7 @@ export interface Database {
         Row: {
           id: string
           agente_id: string
-          turno_id: string
+          turno_id: string | null
           terminal: string
           tipo_asignacion: string
           fecha_asignacion: string
@@ -98,7 +98,7 @@ export interface Database {
         Insert: {
           id?: string
           agente_id: string
-          turno_id: string
+          turno_id?: string | null
           terminal: string
           tipo_asignacion: string
           fecha_asignacion: string
@@ -109,7 +109,7 @@ export interface Database {
         Update: {
           id?: string
           agente_id?: string
-          turno_id?: string
+          turno_id?: string | null
           terminal?: string
           tipo_asignacion?: string
           fecha_asignacion?: string
@@ -118,7 +118,70 @@ export interface Database {
           created_at?: string
         }
       }
-      // Add more table types as needed
+      vuelos: {
+        Row: {
+          id: string
+          numero_vuelo: string
+          tipo_vuelo: string
+          terminal: string
+          puente: string | null
+          estado: string
+          eta: string | null
+          etd: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          numero_vuelo: string
+          tipo_vuelo: string
+          terminal: string
+          puente?: string | null
+          estado?: string
+          eta?: string | null
+          etd?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          numero_vuelo?: string
+          tipo_vuelo?: string
+          terminal?: string
+          puente?: string | null
+          estado?: string
+          eta?: string | null
+          etd?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+      }
+      notificaciones: {
+        Row: {
+          id: string
+          destinatario_id: string
+          tipo: string
+          contenido: string
+          leida: boolean
+          fecha: string
+        }
+        Insert: {
+          id?: string
+          destinatario_id: string
+          tipo: string
+          contenido: string
+          leida?: boolean
+          fecha?: string
+        }
+        Update: {
+          id?: string
+          destinatario_id?: string
+          tipo?: string
+          contenido?: string
+          leida?: boolean
+          fecha?: string
+        }
+      }
     }
     Views: {
       [_ in never]: never

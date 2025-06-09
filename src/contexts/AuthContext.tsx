@@ -14,6 +14,8 @@ interface Agente {
   estado_turno: string
   foto_perfil_url?: string
   foto_portada_url?: string
+  created_at: string
+  updated_at: string
 }
 
 interface UserData {
