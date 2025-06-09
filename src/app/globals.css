@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* Light Theme - Swissport Colors */
+.light {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --primary: #003366;
+  --primary-foreground: #ffffff;
+  --secondary: #006666;
+  --secondary-foreground: #ffffff;
+  --accent: #ffcccc;
+  --accent-foreground: #1a1a1a;
+  --muted: #f5f5f5;
+  --muted-foreground: #666666;
+  --border: #e5e5e5;
+  --input: #ffffff;
+  --ring: #003366;
+  --gradient-from: #ffcccc;
+  --gradient-to: #ffffcc;
+}
+
+/* Dark Theme - Swissport Colors */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --primary: #006666;
+  --primary-foreground: #ffffff;
+  --secondary: #003366;
+  --secondary-foreground: #ffffff;
+  --accent: #1a3333;
+  --accent-foreground: #ededed;
+  --muted: #1a1a1a;
+  --muted-foreground: #999999;
+  --border: #333333;
+  --input: #1a1a1a;
+  --ring: #006666;
+  --gradient-from: #003366;
+  --gradient-to: #006666;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: linear-gradient(to bottom right, var(--gradient-from) 0%, var(--gradient-to) 100%);
+  color: var(--foreground);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.swissport-gradient {
+  background: linear-gradient(to bottom right, var(--gradient-from) 0%, var(--gradient-to) 100%);
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-effect {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
